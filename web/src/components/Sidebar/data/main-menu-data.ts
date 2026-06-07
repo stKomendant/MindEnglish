@@ -1,11 +1,8 @@
 import {
   Birdhouse,
-  BookOpenText,
   Gamepad2,
   TableProperties,
-  Dumbbell,
   ChartColumn,
-  Trophy,
   Settings,
 } from "lucide-react";
 
@@ -33,26 +30,11 @@ export const mainMenuData: MenuItem[] = [
   },
   {
     id: "4",
-    name: "Уроки",
-    icon: BookOpenText,
-  },
-  {
-    id: "5",
-    name: "Асоціації",
-    icon: Dumbbell,
-  },
-  {
-    id: "6",
     name: "Статистика",
     icon: ChartColumn,
   },
   {
-    id: "7",
-    name: "Досягнення",
-    icon: Trophy,
-  },
-  {
-    id: "8",
+    id: "5",
     name: "Налаштування",
     icon: Settings,
   },
