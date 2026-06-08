@@ -1,13 +1,14 @@
 import express from "express";
-
+import cors from "cors";
+import authRoutes from "./routes/resiter/auth";
 const app = express();
+const port = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
+app.use(cors());
+app.use(express.json());
 
-const PORT = 3000;
+app.use("/auth", authRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
 });
