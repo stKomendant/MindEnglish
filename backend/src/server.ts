@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
-import authRoutes from "./routes/resiter/auth";
+import authRoutes from "./routes/auth-server/auth";
+
 const app = express();
-const port = 3000;
+const port = process.env.port || 3000;
 
 app.use(cors());
 app.use(express.json());

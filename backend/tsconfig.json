@@ -1,14 +1,18 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES2022",
     "module": "commonjs",
-    "rootDir": "./src",
+    "moduleResolution": "node",
+    "rootDir": ".",
     "outDir": "./dist",
+    "ignoreDeprecations": "6.0",
 
     "strict": true,
 
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "include": ["src", "prisma.config.ts", "prisma/**/*"]
 }
