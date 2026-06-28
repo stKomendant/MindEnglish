@@ -1,4 +1,7 @@
-export const VERIFICATION_EMAIL_TEMPLATE = `
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.WELCOME_EMAIL_TEMPLATE = exports.PASSWORD_RESET_TEMPLATE = exports.VERIFICATION_EMAIL_TEMPLATE = void 0;
+exports.VERIFICATION_EMAIL_TEMPLATE = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -106,8 +109,7 @@ export const VERIFICATION_EMAIL_TEMPLATE = `
 </body>
 </html>
 `;
-
-export const PASSWORD_RESET_TEMPLATE = `
+exports.PASSWORD_RESET_TEMPLATE = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -232,8 +234,7 @@ export const PASSWORD_RESET_TEMPLATE = `
 </body>
 </html>
 `;
-
-export const WELCOME_EMAIL_TEMPLATE = `
+exports.WELCOME_EMAIL_TEMPLATE = `
 <!DOCTYPE html>
 <html>
 <head>

@@ -7,8 +7,15 @@ model User {
     username String @unique
     avatar String?
 
-    verificationToken String
-    verificationTokenExpiresAt DateTime 
+    isVerified Boolean @default(false)
+
+    verificationToken String?
+    verificationTokenExpiresAt DateTime?
+
+    resetPasswordToken String?
+    resetPasswordExpireAt DateTime?
+
+    lastLogin DateTime?
 
     createdAt DateTime @default(now()) @map("created_at")
     updatedAt DateTime @updatedAt @map("updated_at")
