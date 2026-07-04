@@ -1,5 +1,5 @@
 import Sidebar from "../Sidebar/Sidebar";
-import { HeaderUsers } from "../../pages/Header/Header-user";
+import { HeaderUsers } from "../../pages/Header/HeaderUserPage";
 import { Outlet } from "react-router-dom";
 
 const LayoutApp = () => {
