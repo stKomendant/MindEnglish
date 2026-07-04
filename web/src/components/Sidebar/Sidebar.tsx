@@ -3,7 +3,7 @@ import { SidebarMenu } from "./SidebarMenu";
 export default function Sidebar() {
   return (
     <>
-      <div className="w-56 m-1 p-3  rounded-lg  h-screen bg-[#0f021e] text-white">
+      <div className="w-56 m-1 p-2  rounded-lg  h-screen bg-[#130326] text-white">
         <SidebarHeading
           title="MindEng"
           logo={
