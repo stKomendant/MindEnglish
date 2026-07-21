@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useAuthStore from "../../../store/authStore";
 
 export const VerifyEmailPage = () => {
   const [code, setCode] = useState(["", "", "", "", "", ""]);
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const {verifyEmail, isLoading, error} = useAuthStore();
   const navigate = useNavigate();
 
   const isComplete = code.every((d) => d !== "");
@@ -66,7 +68,12 @@ export const VerifyEmailPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    navigate("/");
+    try {
+      await verifyEmail(code.join(""));
+      navigate("/");
+    } catch {
+      console.log("Failed to verify email");
+    }
   };
 
   return (
@@ -105,7 +112,7 @@ export const VerifyEmailPage = () => {
             />
           ))}
         </div>
-
+{error && <p className="text-red-500 text-sm">{error}</p>}
         <button
           type="submit"
           disabled={!isComplete}
@@ -114,7 +121,7 @@ export const VerifyEmailPage = () => {
            active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed
             disabled:active:scale-100"
         >
-          Verify Email
+          {isLoading ? "Verifying..." : "Verify Email"}
         </button>
       </form>
     </div>

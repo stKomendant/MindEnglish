@@ -26,6 +26,7 @@ function getStrength(password: string) {
 const PasswordStrengthMeter = ({ password }: { password: string }) => {
   const strength = getStrength(password);
 
+
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between text-xs">

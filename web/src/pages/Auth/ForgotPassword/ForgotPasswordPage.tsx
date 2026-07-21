@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, ArrowLeft } from "lucide-react";
+import useAuthStore from "../../../store/authStore";
 
 export const ForgotPasswordPage = () => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+const {isLoading, forgotPassword  } = useAuthStore();
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await forgotPassword(email);
     setIsSubmitted(true);
   };
 
@@ -51,7 +55,11 @@ export const ForgotPasswordPage = () => {
           </p>
         </div>
       )}
-
+{isLoading && (
+        <div className="mt-4 text-center">
+          <p className="text-gray-400">Sending reset link...</p>
+        </div>
+      )}
       <div className="mt-6 text-center">
         <Link
           to="/auth/login"

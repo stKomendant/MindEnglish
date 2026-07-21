@@ -13,6 +13,7 @@ import { LoginPage } from "./pages/Auth/Login/LoginPage.tsx";
 import { SignUpPage } from "./pages/Auth/Signup/SignUpPage.tsx";
 import { ForgotPasswordPage } from "./pages/Auth/ForgotPassword/ForgotPasswordPage.tsx";
 import { VerifyEmailPage } from "./pages/Auth/VerifyEmail/VerifyEmailPage.tsx";
+import { ResetPasswordPage } from "./pages/Auth/ResetPassword/ResetPasswordPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "verify-email",
         element: <VerifyEmailPage />,
+      },
+      {
+        path: 'reset-password/:token',
+        element: <ResetPasswordPage />,
       },
     ],
   },
