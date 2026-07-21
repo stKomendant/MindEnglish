@@ -2,17 +2,27 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import PasswordStrengthMeter from "../Password-strength-meter/PasswordStrengthMeter";
 import { User, Mail, Lock, ArrowLeft } from "lucide-react";
+import useAuthStore from "../../../store/authStore";
+
 
 export const SignUpPage = () => {
   const [name, setName] = useState("");
   const [email, setEamil] = useState("");
   const [password, setPassword] = useState("");
+  const {signup, isLoading, error} = useAuthStore();
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: call signup API
-    navigate("/auth/verify-email");
+
+    try{
+      await signup(name, email, password);
+      navigate("/auth/verify-email");
+    }catch {
+      console.log("Failed to sign up");
+    }
   };
 
   return (
@@ -63,14 +73,17 @@ export const SignUpPage = () => {
           />
         </div>
 
-        {/* Password strength */}
+{error && <p className="text-red-500 text-sm">{error}</p>}
+
         <PasswordStrengthMeter password={password} />
+
+
 
         <button
           type="submit"
           className="mt-1 h-12 rounded-lg bg-linear-to-r from-[#7a2cff] to-[#bf33ff] text-lg font-semibold text-white transition hover:opacity-90 active:scale-[0.98]"
         >
-          Sign Up
+          {isLoading ? "Signing up..." : "Sign Up"}
         </button>
       </form>
 

@@ -5,9 +5,14 @@ import authRoutes from "./routes/auth-server/auth";
 import cookiParser from "cookie-parser";
 
 const app = express();
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(cookiParser());
 
