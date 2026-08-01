@@ -2,16 +2,15 @@ import crypto from "crypto";
 import bcrypt from "bcrypt";
 
 import { Request, Response } from "express";
-import { prisma } from "../lib/prisma";
+import { prisma } from "../../lib/prisma";
 
-import { generateTokenAndSetCookie } from "../utils/generateTokenAndSetCookie";
+import { generateTokenAndSetCookie } from "../../utils/generateTokenAndSetCookie";
 import {
   sendPasswordResetEmail,
   sendWelcomeEmail,
   sendVerificationEmail,
   sendResetSuccessEmail,
-} from "../mailtrap/emails";
-import { email } from "zod";
+} from "../../mailtrap/emails";
 
 export const signup = async (req: Request, res: Response) => {
   const { email, password, username } = req.body;
