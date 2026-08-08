@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import PasswordStrengthMeter from "../Password-strength-meter/PasswordStrengthMeter";
+import PasswordStrengthMeter from "../../../components/Password-strength-meter/PasswordStrengthMeter";
 import { User, Mail, Lock, ArrowLeft } from "lucide-react";
 import useAuthStore from "../../../store/authStore";
 
@@ -19,7 +19,7 @@ export const SignUpPage = () => {
 
     try{
       await signup(name, email, password);
-      navigate("/auth/verify-email");
+      navigate("/");
     }catch {
       console.log("Failed to sign up");
     }

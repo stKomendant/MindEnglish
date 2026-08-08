@@ -3,9 +3,6 @@ import { prisma } from "../../lib/prisma";
 
 export const createWord = async (req: Request, res: Response) => {
     try {
-       console.log("BODY:", req.body);
-    console.log("USER ID:", req.userId);
-
         const {word, definition, example} = req.body
         const userId = req.userId  
 
