@@ -21,6 +21,6 @@ model User {
     updatedAt DateTime @updatedAt @map("updated_at")
 
     @@map("users")
-    
+     
+words Word[]
 }
-

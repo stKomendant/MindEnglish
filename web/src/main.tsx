@@ -11,9 +11,9 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import AuthLayout from "./pages/Auth/Layout/AuthLayout.tsx";
 import { LoginPage } from "./pages/Auth/Login/LoginPage.tsx";
 import { SignUpPage } from "./pages/Auth/Signup/SignUpPage.tsx";
-import { ForgotPasswordPage } from "./pages/Auth/ForgotPassword/ForgotPasswordPage.tsx";
-import { VerifyEmailPage } from "./pages/Auth/VerifyEmail/VerifyEmailPage.tsx";
-import { ResetPasswordPage } from "./pages/Auth/ResetPassword/ResetPasswordPage.tsx";
+// import { ForgotPasswordPage } from "./pages/Auth/ForgotPassword/ForgotPasswordPage.tsx";
+// import { VerifyEmailPage } from "./pages/Auth/VerifyEmail/VerifyEmailPage.tsx";
+// import { ResetPasswordPage } from "./pages/Auth/ResetPassword/ResetPasswordPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -56,18 +56,18 @@ const router = createBrowserRouter([
         path: "signup",
         element: <SignUpPage />,
       },
-      {
-        path: "forgot-password",
-        element: <ForgotPasswordPage />,
-      },
-      {
-        path: "verify-email",
-        element: <VerifyEmailPage />,
-      },
-      {
-        path: 'reset-password/:token',
-        element: <ResetPasswordPage />,
-      },
+      // {
+      //   path: "forgot-password",
+      //   element: <ForgotPasswordPage />,
+      // },
+      // {
+      //   path: "verify-email",
+      //   element: <VerifyEmailPage />,
+      // },
+      // {
+      //   path: 'reset-password/:token',
+      //   element: <ResetPasswordPage />,
+      // },
     ],
   },
 ]);

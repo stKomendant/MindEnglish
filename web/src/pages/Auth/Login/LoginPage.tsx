@@ -52,12 +52,12 @@ const handleLogin = async(e: React.FormEvent) => {
 
 {error && <p className="text-red-500 text-sm">{error}</p>}
 
-        <Link
+        {/* <Link
           to="/auth/forgot-password"
           className="text-sm text-violet-400 hover:text-violet-300"
         >
           Forgot password?
-        </Link>
+        </Link> */}
 
         <button type="submit" className="mt-1 h-12 rounded-lg bg-linear-to-r from-[#7a2cff] to-[#bf33ff] text-lg font-semibold text-white transition hover:opacity-90 active:scale-[0.98]">
           Login
