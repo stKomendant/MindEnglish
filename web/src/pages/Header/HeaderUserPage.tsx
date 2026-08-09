@@ -24,7 +24,7 @@ export const HeaderUsers = () => {
         gap-3
         px-3
         h-12
-        min-w-[250px]
+        min-w-0 sm:min-w-[250px]
         rounded-full
         border border-black
         bg-[#1d0a44]
@@ -35,8 +35,7 @@ export const HeaderUsers = () => {
           src="/images/icon/users/profile.png"
           alt="profile"
         />
-
-        <span className="text-2xl font-bold">{user?.username}</span>
+<span className="text-lg sm:text-2xl font-bold truncate max-w-[100px] sm:max-w-none">{user?.username}</span>
         <span className="flex-1"></span>
         <ChevronDown size={18} className="text-gray-400" />
       </button>

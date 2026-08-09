@@ -15,15 +15,13 @@ const QuickGame = ({
 }: typeQuickGame) => {
   return (
     <>
-      <div className="flex justify-between  gap-4">
+      <div className="flex flex-col md:flex-row gap-4 ">
         <div className="w-full bg-[#1d0a44] rounded-xl p-4">
           <h2 className="text-2xl font-bold pb-2">{title}</h2>
           <p className="text-xs pb-4  text-gray-400">{description}</p>
-          <div className="flex gap-5">
+          <div className="flex flex-col sm:flex-row gap-5">
             <img
-              className=" rounded-xl"
-              width={180}
-              height={110}
+             className="rounded-xl w-full sm:w-[180px] h-[140px] sm:h-[110px] object-cover"
               src={img}
               alt="Bread"
             />
@@ -49,11 +47,9 @@ const QuickGame = ({
           <p className="text-xs pb-4  text-gray-400">
             Обери слово та пройди коротку асоціацію
           </p>
-          <div className="flex gap-5">
+          <div className="flex flex-col sm:flex-row gap-5">
             <img
-              className=" rounded-xl"
-              width={180}
-              height={110}
+            className="rounded-xl w-full sm:w-[180px] h-[140px] sm:h-[110px] object-cover"
               src="./images/icon/words/game.png"
               alt="game"
             />

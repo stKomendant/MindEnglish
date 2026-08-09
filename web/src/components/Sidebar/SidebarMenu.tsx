@@ -2,7 +2,7 @@ import { mainMenuData } from "./data/main-menu-data";
 import type { MenuItem } from "./data/main-menu-data";
 import { NavLink } from "react-router-dom";
 
-export const SidebarMenu = () => {
+export const SidebarMenu = ({ onNavigate }: { onNavigate?: () => void }) => {
   return (
     <ul className="mt-7 space-y-2 ">
       {mainMenuData.map((item: MenuItem) => {
@@ -10,6 +10,7 @@ export const SidebarMenu = () => {
           <li key={item.id} className="">
             <NavLink
               to={item.path}
+              onClick={onNavigate}
               className={({ isActive }) =>
                 `flex gap-3 items-center p-4 rounded-lg hover:bg-[#260e42] ${
                   isActive
