@@ -90,28 +90,28 @@ export const Dictionary = () => {
       <h1 className="text-2xl font-bold">Словник</h1>
       <p className="text-sm text-[#8577a8] mb-4">Вивчай нові слова щодня</p>
 
-      <div className="flex items-center gap-3 mb-5">
-        <div className="relative flex-1 max-w-md">
-          <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8577a8]" />
-          <input
-            type="text"
-            placeholder="Пошук слова..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-[#1d0a44] border border-[#3a2166] rounded-lg pl-10 pr-4 py-2
-            placeholder:text-[#8577a8] focus:outline-none focus:border-[#6d28d9]"
-          />
-        </div>
+    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-5">
+  <div className="relative flex-1 max-w-md">
+    <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8577a8]" />
+    <input
+      type="text"
+      placeholder="Пошук слова..."
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+      className="w-full bg-[#1d0a44] border border-[#3a2166] rounded-lg pl-10 pr-4 py-2
+      placeholder:text-[#8577a8] focus:outline-none focus:border-[#6d28d9]"
+    />
+  </div>
 
-        <button
-          onClick={openCreateForm}
-          className="flex items-center gap-2 bg-[#1d0a44] hover:bg-[#2a1259] border border-[#3a2166]
-          transition-colors rounded-lg px-4 py-2 font-medium text-sm shrink-0"
-        >
-          <Plus size={16} />
-          Додати слово
-        </button>
-      </div>
+  <button
+    onClick={openCreateForm}
+    className="flex items-center justify-center gap-2 bg-[#1d0a44] hover:bg-[#2a1259] border border-[#3a2166]
+    transition-colors rounded-lg px-4 py-2 font-medium text-sm shrink-0"
+  >
+    <Plus size={16} />
+    Додати слово
+  </button>
+</div>
 
       {isFormOpen && (
         <WordFormModal

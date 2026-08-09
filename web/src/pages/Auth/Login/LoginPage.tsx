@@ -14,7 +14,7 @@ const handleLogin = async(e: React.FormEvent) => {
 }
 
   return (
-    <div className="w-[430px] rounded-2xl border border-white/10 bg-[#1d1033]/80 backdrop-blur-2xl shadow-2xl p-8">
+    <div className="w-full max-w-[430px] mx-4 rounded-2xl border border-white/10 bg-[#1d1033]/80 backdrop-blur-2xl shadow-2xl p-8">
       <Link
         to="/"
         className="inline-flex items-center gap-1 text-sm text-violet-400 hover:text-violet-300 pb-3"
