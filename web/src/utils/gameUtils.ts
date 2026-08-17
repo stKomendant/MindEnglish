@@ -7,6 +7,11 @@ export interface Question {
   direction: "en-to-translation" | "translation-to-en";
 }
 
+export interface SpellingQuestion {
+  translation: string;
+  correctAnswer: string;
+}
+
 export const shuffle = <T,>(arr: T[]): T[] => {
   const copy = [...arr];
   for (let i = copy.length - 1; i > 0; i--) {
@@ -14,6 +19,15 @@ export const shuffle = <T,>(arr: T[]): T[] => {
     [copy[i], copy[j]] = [copy[j], copy[i]];
   }
   return copy;
+};
+
+export const generateSpellingQuestions = (playableWords: Word[]): SpellingQuestion[] => {
+  const shuffledWords = shuffle(playableWords).slice(0, 10);
+
+  return shuffledWords.map((w) => ({
+    translation: w.definition!,
+    correctAnswer: w.word,
+  }));
 };
 
 export const generateQuestions = (playableWords: Word[]): Question[] => {
