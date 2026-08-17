@@ -1,0 +1,14 @@
+model GameResult {
+    id String @id @default(uuid())
+
+    score Int
+    totalQuestions Int
+    gameType String @default("word-repeat")
+
+    userId String
+    user User @relation(fields: [userId], references: [id])
+
+   createdAt DateTime @default(now()) @map("created_at")
+
+    @@map("game_results")
+}
