@@ -109,7 +109,7 @@ export const useAuthStore = create<AuthState>(
       } catch{
         set({ isLoading: false, error: 'Failed to delete account'});
       }
-    },
+    }
 
     // verifyEmail: async(code: string) => {
     // set({isLoading: true, error: null})
