@@ -1,13 +1,25 @@
+/// <reference path="./types/express.d.ts" />
 import express from "express";
+import cors from "cors";
+import authRoutes from "./routes/auth-server/auth";
+import cookiParser from "cookie-parser";
+import wordRouter from "./routes/word/word";
 
 const app = express();
+const port = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    credentials: true,
+  }),
+);
+app.use(express.json());
+app.use(cookiParser());
 
-const PORT = 3000;
+app.use("/auth", authRoutes);
+app.use("/api/words", wordRouter)
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
 });
