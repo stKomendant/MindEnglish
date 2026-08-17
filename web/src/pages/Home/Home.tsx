@@ -10,11 +10,11 @@ export const Home = () => {
 <main className="w-full grid grid-cols-1 lg:grid-cols-[60%_1fr] gap-1 lg:gap-4">
       <section className="order-2 lg:order-1">
         <QuickGame
-          title="Гра з асоціаціями"
-          description="Вчи слова через асоціації з реальними ситуаціями"
+          title="Гра напиши слово"
+          description="Побач переклад і напиши слово англійською самостійно"
           word="хліб"
           wordTranslation="bread"
-          img="./images/icon/words/bread.png"
+          img="./images/icon/words/game.png"
         />
         <BlockMyWords />
 
