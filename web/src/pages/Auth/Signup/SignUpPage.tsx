@@ -15,8 +15,12 @@ export const SignUpPage = () => {
 
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
+    if(password.length < 6){
+     return
+    }
+    
     try{
       await signup(name, email, password);
       navigate("/");
@@ -68,10 +72,16 @@ export const SignUpPage = () => {
             type="password"
             placeholder="Password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => { setPassword(e.target.value); 
+
+             }}
+            
             className="w-full bg-transparent text-white placeholder-gray-500 outline-none"
           />
         </div>
+        {password && (
+  <p className="text-red-400 text-sm -mt-2">Password must be at least 6 characters</p>
+)}
 
 {error && <p className="text-red-500 text-sm">{error}</p>}
 
