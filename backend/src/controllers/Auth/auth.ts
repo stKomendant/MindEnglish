@@ -50,7 +50,7 @@ export const signup = async (req: Request, res: Response) => {
     message: "Signup failed", 
     error: error instanceof Error ? error.message : String(error) 
   });
-};
+}};
 
 export const login = async (req: Request, res: Response) => {
   const { email, password } = req.body;
