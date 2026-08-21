@@ -3,7 +3,7 @@ import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
-const API_URL = 'https://mindenglish.onrender.com/auth';
+const API_URL = '/auth';
 
 export interface AuthState {
   isAuthenticated: boolean;

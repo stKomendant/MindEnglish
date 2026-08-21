@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "https://mindenglish.onrender.com",
+    origin: process.env.CLIENT_URL || "https://mind-english.vercel.app",
     credentials: true,
   }),
 );

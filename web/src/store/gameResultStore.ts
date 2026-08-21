@@ -3,7 +3,7 @@ import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
-const API_URL = "https://mindenglish.onrender.com/api/game-results";
+const API_URL = "/api/game-results";
 
 export interface GameResult {
   id: string;

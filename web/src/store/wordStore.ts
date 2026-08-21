@@ -3,7 +3,7 @@ import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
-const API_URL = "https://mindenglish.onrender.com/api/words";
+const API_URL = "/api/words";
 
 export interface Word {
   id: string;
