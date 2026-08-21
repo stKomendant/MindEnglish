@@ -44,9 +44,12 @@ export const signup = async (req: Request, res: Response) => {
       message: "User created successfully",
       user,
     });
-  } catch (error) {
-    res.status(400).json({ message: "Failed to send verification email" });
-  }
+  }  catch (error) {
+  console.error("Signup error:", error);
+  res.status(400).json({ 
+    message: "Signup failed", 
+    error: error instanceof Error ? error.message : String(error) 
+  });
 };
 
 export const login = async (req: Request, res: Response) => {
