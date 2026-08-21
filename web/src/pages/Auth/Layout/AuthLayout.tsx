@@ -20,12 +20,7 @@ useEffect(() => {
 }, [checkAuth])
 
 if (isCheckingAuth) {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-700 to-fuchsia-800
-    flex items-center justify-center relative overflow-hidden">
-      <p className="text-white text-lg">Checking authentication...</p>
-    </div>
-  )
+  return null;
 }
 
 return (
