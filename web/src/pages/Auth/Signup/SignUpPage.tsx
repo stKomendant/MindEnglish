@@ -93,7 +93,7 @@ export const SignUpPage = () => {
           type="submit"
           className="mt-1 h-12 rounded-lg bg-linear-to-r from-[#7a2cff] to-[#bf33ff] text-lg font-semibold text-white transition hover:opacity-90 active:scale-[0.98]"
         >
-          {isLoading ? "Signing up..." : "Sign Up"}
+          {isLoading ? "login up..." : "login"}
         </button>
       </form>
 

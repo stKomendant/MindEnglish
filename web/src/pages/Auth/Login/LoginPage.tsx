@@ -6,7 +6,7 @@ import useAuthStore from "../../../store/authStore";
 export const LoginPage = () => {
   const [email, setEamil] = useState("");
   const [password, setPassword] = useState("");
-const {login, error} = useAuthStore();
+const {login, error, isLoading} = useAuthStore();
 
 const handleLogin = async(e: React.FormEvent) => {
   e.preventDefault();
@@ -60,7 +60,7 @@ const handleLogin = async(e: React.FormEvent) => {
         </Link> */}
 
         <button type="submit" className="mt-1 h-12 rounded-lg bg-linear-to-r from-[#7a2cff] to-[#bf33ff] text-lg font-semibold text-white transition hover:opacity-90 active:scale-[0.98]">
-          Login
+          {isLoading ? "Signing up..." : "Sign Up"}
         </button>
       </form>
 
